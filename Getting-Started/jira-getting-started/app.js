@@ -37,7 +37,7 @@ app.set('port', port);
 
 // Configure Handlebars
 const viewsDir = __dirname + '/views';
-app.engine('hbs', hbs.express4({partialsDir: viewsDir}));
+app.engine('hbs', hbs.express4({ partialsDir: viewsDir }));
 app.set('view engine', 'hbs');
 app.set('views', viewsDir);
 
@@ -47,7 +47,7 @@ app.use(morgan(devEnv ? 'dev' : 'combined'));
 
 // Include request parsers
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Gzip responses when appropriate
@@ -68,8 +68,8 @@ routes(app, addon);
 
 // Boot the HTTP server
 http.createServer(app).listen(port, () => {
-  console.log('App server running at http://' + os.hostname() + ':' + port);
+    console.log('App server running at http://' + os.hostname() + ':' + port);
 
-  // Enables auto registration/de-registration of app into a host in dev mode
-  if (devEnv) addon.register();
+    // Enables auto registration/de-registration of app into a host in dev mode
+    if (devEnv) addon.register();
 });
