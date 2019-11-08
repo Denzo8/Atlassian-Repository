@@ -8,7 +8,7 @@ $(document).ready(function() {
 
             // Store the base URL for later
             var baseUrl = json._links.base;
-
+            console.log(json);
             // Did we get any requests back?
             if (json.values.length > 0) {
                 // Create a table with the resulting requests
