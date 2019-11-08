@@ -15,6 +15,17 @@ export default function routes(app, addon) {
                 //issueId: req.query['issueId']
         });
     });
+    app.get('/projects-view', addon.authenticate(), (req, res) => {
+        // Rendering a template is easy; the render method takes two params:
+        // name of template and a json object to pass the context in.
+
+        res.render('projects-view', {
+
+            title: 'My projects'
+                //issueId: req.query['issueId']
+
+        });
+    });
 
     // Add additional route handlers here...
 
@@ -42,5 +53,17 @@ export default function routes(app, addon) {
 
         });
     });
+    app.get('/boards-view', addon.authenticate(), (req, res) => {
+        // Rendering a template is easy; the render method takes two params:
+        // name of template and a json object to pass the context in.
+
+        res.render('boards-view', {
+
+            //title: resp.key
+            //issueId: req.query['issueId']
+
+        });
+    });
+
 
 }

@@ -22,12 +22,12 @@
     ],
     "modules": {
         "generalPages": [{
-                "key": "hello-world-page-jira",
+                "key": "projects-page-jira",
                 "location": "system.top.navigation.bar",
                 "name": {
-                    "value": "Hello World"
+                    "value": "My projects"
                 },
-                "url": "/hello-world",
+                "url": "/projects-view",
                 "conditions": [{
                     "condition": "user_is_logged_in"
                 }]
@@ -78,6 +78,17 @@
                     "value": "User Info"
                 },
                 "url": "/users-view",
+                "conditions": [{
+                    "condition": "user_is_logged_in"
+
+                }]
+            },
+            {
+                "key": "boards-view-link",
+                "name": {
+                    "value": "Boards"
+                },
+                "url": "/boards-view",
                 "conditions": [{
                     "condition": "user_is_logged_in"
 
