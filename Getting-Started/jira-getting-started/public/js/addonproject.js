@@ -9,6 +9,7 @@ $(document).ready(function() {
 
             console.log(json)
 
+
             $('<table>').addClass('aui').append(
                 $('<thead>').append(
                     $('<tr>').append(
@@ -22,7 +23,9 @@ $(document).ready(function() {
                 $('<tbody>').append(
 
                     $('<tr>').append(
-                        $('<td>').text(json.key),
+                        $('<td>').text(
+                            json.key
+                        ),
                         $('<td>').text(json.name),
                         $('<td>').text(json.assigneeType),
                         $('<td>').text(json.lead.displayName),
@@ -34,7 +37,7 @@ $(document).ready(function() {
                 )
 
 
-            ).appendTo('#show-project');
+            ).appendTo('#show-project-content');
 
         }
     })

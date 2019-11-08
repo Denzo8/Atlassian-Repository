@@ -2,14 +2,14 @@
 $(document).ready(function() {
     // GET our Service Desk requests via the Jira Service Desk REST API
     AP.request({
-        url: '/rest/api/3/users/search',
+        url: '/rest/api/3/user/assignable/search?project=SCRUMT1',
         success: function(response) {
             // Parse the response JSON
             var json = JSON.parse(response);
 
-            console.log(json)
+            console.log(json);
             $.map(json, function(e) {
-
+                console.log(e);
                 $('<table>').addClass('aui').append(
                     $('<thead>').append(
                         $('<tr>').append(
