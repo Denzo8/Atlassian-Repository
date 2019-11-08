@@ -4,7 +4,7 @@
     "description": "My very first app",
     "vendor": {
         "name": "Josue",
-        "url": "https://www.atlassian.com/yolo"
+        "url": "https://www.atlassian.com/yoloswag"
     },
     "baseUrl": "{{localBaseUrl}}",
     "links": {
@@ -51,10 +51,25 @@
                 },
                 "url": "/project-view",
                 "conditions": [{
+                    "condition": "user_is_logged_in"
+
+                }]
+            },
+            {
+                "key": "my-requests-link",
+                "name": {
+                    "value": "My Requests"
+                },
+                "url": "/my-requests",
+                "conditions": [{
                         "condition": "user_is_logged_in"
-
+                    },
+                    {
+                        "condition": "can_use_application",
+                        "params": {
+                            "applicationKey": "jira-servicedesk"
+                        }
                     }
-
                 ]
             },
             {
@@ -67,18 +82,7 @@
                     "condition": "user_is_logged_in"
 
                 }]
-            },
-            {
-                "key": "my-requests-link",
-                "name": {
-                    "value": "My Requests"
-                },
-                "url": "/my-requests",
-                "conditions": [{
-                    "condition": "user_is_logged_in"
-                }]
             }
-
         ]
     },
     "apiMigrations": {

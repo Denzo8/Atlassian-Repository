@@ -26,6 +26,7 @@ import os from 'os';
 
 // Routes live here; this is the C in MVC
 import routes from './routes';
+//import projectroute from './routes/project-view-route';
 
 // Bootstrap Express and atlassian-connect-express
 const app = express();
@@ -65,6 +66,8 @@ if (devEnv) app.use(errorHandler());
 
 // Wire up routes
 routes(app, addon);
+
+
 
 // Boot the HTTP server
 http.createServer(app).listen(port, () => {

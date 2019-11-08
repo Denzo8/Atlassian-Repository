@@ -45,7 +45,6 @@ $(document).ready(function() {
                         })
                     )
                 ).appendTo('#main-content');
-
             } else {
                 // Show a link to the Customer Portal
                 $('<div>').addClass('aui-message').append(
